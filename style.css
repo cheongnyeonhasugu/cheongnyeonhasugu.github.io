@@ -824,6 +824,7 @@ legend {
 
 .checkbox-row {
   display: flex;
+  flex-wrap: wrap; /* ✅ 넘치면 자동 줄바꿈 */
   align-items: center;
   gap: 10px;
   font-size: 1.6rem; /* 텍스트 크기 */
@@ -833,16 +834,21 @@ legend {
 .checkbox-input {
   width: 24px;
   height: 24px;
+  flex-shrink: 0; /* 체크박스는 줄어들지 않게 */
   accent-color: var(--highlight-color); /* 강조색 적용 */
 }
-
+.checkbox-label {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
 /* 텍스트 입력칸도 깔끔하게 */
 .inline-text {
   padding: 8px 12px;
   font-size: 1.4rem;
   border: 1px solid var(--highlight-color);
   border-radius: 6px;
-  flex: 1;
+  flex: 1 1 200px; /* ✅ 적당히 줄어들며 최대한 꽉 채움 */
+  min-width: 0; /* ✅ 넘침 방지 */
 }
 
 @media (max-width: 768px) {
@@ -857,6 +863,12 @@ legend {
 
   .inline-text {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .inline-text {
+    width: 100%;
   }
 }
 
