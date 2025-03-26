@@ -1,0 +1,1113 @@
+:root {
+  --highlight-color: #22d3ee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+
+.center {
+  text-align: center;
+}
+
+.highlight {
+  color: var(--highlight-color);
+}
+
+.normal {
+  color: #333;
+}
+
+.big-text {
+  font-size: 4.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap; /* 모바일 대응 */
+}
+
+
+.header-left,
+.header-center,
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-left,
+.header-right {
+flex: 0 0 100px;
+}
+.header-center {
+flex: 1;
+}
+
+.header-left {
+  justify-content: flex-start;
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap; /* 한 줄 유지 */
+  overflow: hidden;
+  text-overflow: ellipsis; /* 내용이 넘칠 경우 말줄임 */
+}
+
+
+/* ✅ 모바일 대응 - 화면이 작아지면 크기 줄이기 */
+:root {
+--highlight-color: #22d3ee;
+}
+
+.phone-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+.phone-line {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+/* 메시지는 한 줄에 같이 붙이기 */
+.phone-message {
+  font-size: 1.3rem;
+}
+
+/* 아이콘 크기 통일 */
+.phone-icon {
+font-size: 1.8rem;
+}
+/* PC 기준 (기본) */
+.site-logo {
+height: 48px;
+width: auto;
+object-fit: contain;
+}
+
+/* ✅ iPad 이하 (세로 기준) */
+@media (max-width: 1024px) {
+.site-logo {
+  height: 42px;
+}
+
+.phone-wrapper {
+  font-size: 2rem;
+}
+
+.phone-message {
+  font-size: 1.6rem;
+}
+}
+
+/* ✅ 스마트폰 기준 */
+/* ✅ 모바일에서는 수직 정렬 */
+@media (max-width: 768px) {
+  .header-inner {
+    display: block; /* ✅ flex 제거 */
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .header-left img {
+    display: block;
+    margin: 0 auto;
+    height: 46px; /* 필요 시 모바일 크기 조정 */
+  }
+}
+
+.site-logo {
+  height: 38px;
+}
+
+.phone-wrapper {
+  flex-direction: column;
+  font-size: 2.6rem;
+}
+
+.phone-message {
+  font-size: 2.4rem;
+  margin-top: 4px;
+}
+
+.phone-icon {
+  font-size: 1.8rem;
+}
+
+
+/* ✅ iPhone SE, 갤럭시 A시리즈처럼 좁은 화면 */
+@media (max-width: 390px) {
+.site-logo {
+  height: 34px;
+}
+
+.phone-wrapper {
+  font-size: 1.4rem;
+}
+
+.phone-message {
+  font-size: 1.2rem;
+}
+}
+
+
+
+.header-left img {
+  height: 164px;
+  max-height: 10vh;
+  width: auto;
+  margin-right: 12px;
+  object-fit: contain;
+  display: block;
+    margin: 0 auto;
+    height: 86px; /* 필요 시 모바일 크기 조정 */
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid #eee;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.custom-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+  font-size: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+  
+}
+
+.custom-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--highlight-color, #22d3ee);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.custom-nav a:hover {
+  color: var(--highlight-color, #22d3ee);
+}
+
+.custom-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ✅ 모바일 반응형 */
+@media (max-width: 768px) {
+  .custom-nav {
+    gap: 1rem;
+    font-size: 0.9rem;
+    padding: 10px 0;
+  }
+
+  .custom-nav a {
+    padding: 6px 10px;
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  padding-top: 140px;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+
+
+
+.hero-overlay p {
+  font-size: 1.4rem;
+}
+
+.highlight {
+  color: var(--highlight-color);
+}
+
+@media (max-width: 768px) {
+  .phone-line {
+    font-size: 1.2rem;
+  }
+
+  .phone-message {
+    font-size: 1.1rem;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1.1rem;
+  }
+
+  .site-logo {
+    display: none;
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* 🔥 전체 배경 어둡게 */
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 텍스트 위쪽 정렬 */
+}
+
+.hero-textbox {
+  margin-top: 30vh; /* 여기서 위로 얼마나 올릴지 조정 가능 */
+  text-align: center;
+  color: white;
+  padding: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #ddd;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle span {
+  font-size: 2.2rem;  /* 부모 폰트 크기를 그대로 적용 */
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: 4.8rem;
+  font-weight: bold;
+  line-height: 1.3;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .hero-subtitle span {
+    font-size: 1.8rem;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+
+  .hero-textbox {
+    margin-top: 7vh;
+  }
+}
+
+
+.title-section h2 {
+  font-size: 4.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+  .title-section h2 {
+    font-size: 2.2rem;  /* 원하는 크기로 줄이기 */
+  }
+}
+
+
+.service-section {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  flex-wrap: wrap;
+  margin-top: 80px;
+  margin-bottom: 120px;
+}
+
+.service-box {
+  width: 300px;
+  text-align: center;
+}
+
+.service-box img {
+  width: 100%;
+  max-width: 290px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.service-box h3 {
+  font-size: 2.22rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.service-box p {
+  white-space: pre-line;      /* 줄바꿈은 <br>로만 허용 */
+  word-break: keep-all;       /* 한글 단어 중간에서 줄바꿈 방지 */
+  overflow-wrap: break-word;  /* 긴 단어 잘라주는 보조 */
+  font-size: 1.6rem;
+  color: #555;
+  line-height: 1.6;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* 기본 (PC용) 스타일은 그대로 유지 */
+.gallery-text h2 {
+  font-size: 4.2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.gallery-text p {
+  font-size: 1.6rem;
+  color: #555;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .gallery-text h2 {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+
+  .gallery-text p {
+    font-size: 0.9rem;
+  }
+}
+
+
+.gallery-wrapper {
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.gallery-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+}
+
+.gallery-track img {
+  width: 444px;
+  height: 361px;
+  object-fit: cover;
+  border-radius: 8px;
+  object-fit: contain; /* cover → contain 으로 변경 */
+  padding: 4px;
+  background-color: white; /* 또는 원하는 배경색 */
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .gallery-track img {
+    width: 280px;
+    height: auto; /* 또는 비율 유지하려면 적절히 설정 */
+    object-fit: contain;
+  }
+}
+
+
+.gallery-track.slow {
+  animation: scroll-left 28s linear infinite;
+}
+
+.gallery-track.medium {
+  animation: scroll-left 24s linear infinite;
+}
+
+.gallery-wrapper:hover .gallery-track {
+  animation-play-state: paused;
+}
+
+.photo-gallery-wrapper {
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.photo-gallery-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: scroll-photo 24s linear infinite;
+}
+
+.photo-gallery-track:hover {
+  animation-play-state: paused;
+}
+
+/* PC 기본 스타일 */
+.photo-gallery-text h2 {
+  font-size: 4.2rem;
+  font-weight: 600;
+  margin-top: 160px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.photo-gallery-text p {
+  font-size: 1.6rem;
+  color: #555;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+  .photo-gallery-text h2 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .photo-gallery-text p {
+    font-size: 0.8rem;
+  }
+}
+
+
+.photo-gallery-track img {
+  width: 444px;
+  height: 361px;
+  object-fit: contain;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 한 줄에 4개 */
+  gap: 40px;
+  padding: 30px 20px;
+  justify-items: center;
+}
+
+@media (max-width: 1024px) {
+  .photo-gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* 태블릿: 2개씩 */
+  }
+}
+
+@media (max-width: 640px) {
+  .photo-gallery-grid {
+    grid-template-columns: 1fr; /* 모바일: 1개씩 */
+  }
+}
+
+
+.photo-card {
+  width: 300px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.photo-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.caption {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  gap: 40px;
+  background: #f5f5f5;
+  align-items: flex-start;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 수직 정렬 */
+  align-items: center;     /* 수평 정렬 */
+  text-align: center;
+  padding: 20px 0;
+}
+
+.contact-left h3 {
+  font-size: 3rem;
+  color: green;
+  font-weight: bold;
+}
+
+.contact-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.contact-desc {
+  font-size: 2.4rem;   /* ← 기본보다 크게 */
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.contact-left img {
+  width: 100%;
+  max-width: 850px; /* ← 여기 숫자만 네가 자유롭게 조절하면 돼 */
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.contact-call-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-heading {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.navy-text {
+  color: #16a34a !important;
+}
+
+
+.green-text {
+  color: #16a34a;
+}
+
+.mustard-text {
+  color: #f59e0b;
+}
+
+.styled-form {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.styled-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+}
+
+.styled-form input,
+.styled-form textarea {
+  margin-top: 6px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.inline-input {
+  margin-top: 0;
+  margin-left: 8px;
+  padding: 8px;
+  width: 60%;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.required {
+  color: red;
+  margin-left: 4px;
+}
+
+.form-button {
+  padding: 16px;
+  background-color: var(--highlight-color);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-button:hover {
+  background-color: #06b6d4; /* 살짝 진한 하이라이트색 */
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-label input {
+  margin-left: auto;
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.form-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.form-line .required {
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.form-line label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #111;
+  flex: 1;
+}
+
+.form-line-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.required {
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: 10px;
+  text-align: center;
+}
+
+.label-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.checkbox-line {
+  display: flex;
+  align-items: center;  /* 수직 정렬 */
+  gap: 10px;
+  padding: 4px 0;
+  font-size: 1rem;
+  color: #333;
+}
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.6rem; /* 텍스트 크기 */
+}
+
+/* 체크박스 크기 키우기 */
+.checkbox-input {
+  width: 24px;
+  height: 24px;
+  accent-color: var(--highlight-color); /* 강조색 적용 */
+}
+
+/* 텍스트 입력칸도 깔끔하게 */
+.inline-text {
+  padding: 8px 12px;
+  font-size: 1.4rem;
+  border: 1px solid var(--highlight-color);
+  border-radius: 6px;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .checkbox-row {
+    font-size: 1.4rem;
+  }
+
+  .checkbox-input {
+    width: 22px;
+    height: 22px;
+  }
+
+  .inline-text {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+.required {
+  color: red;
+}
+
+.floating-chat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.chat-btn {
+  width: 72px;
+  height: 72px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.chat-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 핵심: 꽉 채워짐 + 잘림 방지 */
+}
+
+@media (max-width: 768px) {
+  .chat-btn {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.chat-btn:hover {
+  transform: scale(1.1);
+}
+
+
+/* ✅ 모바일 대응 */
+@media (max-width: 480px) {
+  .floating-chat {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .chat-btn {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .phone {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .header-left img {
+    display: none;
+  }
+
+  nav {
+    gap: 1.2rem;
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+  }
+
+  .service-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
+
+  .service-box {
+    width: 90%;
+  }
+}
+
+.site-footer {
+  background-color: #f5f5f5;
+  color: #444;
+  padding: 40px 20px;
+  font-size: 0.95rem;
+  border-top: 1px solid #ddd;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.footer-brand {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: var(--highlight-color, #22d3ee);
+}
+
+.footer-info {
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 30px 16px;
+  }
+
+  .footer-brand {
+    font-size: 1.2rem;
+  }
+
+  .footer-info {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* 등장 애니메이션 */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* 별도 애니메이션 이름 */
+@keyframes scroll-photo {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* 처음 화면에만 보이는 중앙 문구 */
+.phone-center-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  font-size: 1.5rem;
+  color: var(--highlight-color);
+  font-weight: bold;
+  background: white;
+  white-space: nowrap;
+}
+
+#main-header.compact .header-inner,
+#main-header.compact nav {
+  display: none;
+}
+
+#main-header.expanded .phone-center-banner {
+  display: none;
+}
+
+/* 전화번호 줄바꿈 방지 */
+.phone-wrapper,
+.phone-line,
+.phone-message {
+  white-space: nowrap;
+}
+
+/* 모달 */
+.modal {
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 40px 20px;
+  max-width: 90%;
+  width: 400px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+  color: #111;
+}
+
+.modal-content p {
+  margin-bottom: 24px;
+  color: #555;
+  font-size: 1rem;
+}
+
+.modal-button {
+  background-color: var(--highlight-color, #22d3ee);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.modal-button:hover {
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+    width: 90%;
+    padding: 32px 16px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal-content p {
+    font-size: 0.95rem;
+  }
+
+  .modal-button {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>무료상담 신청</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section class="contact-section">
+    <form action="https://formspree.io/f/mayrvqzq" method="POST" onsubmit="handleSubmit(event)" class="styled-form">
+      <label>성함 <span class="required">*</span>
+        <input type="text" name="name" required>
+      </label>
+
+      <label>전화번호 <span class="required">*</span>
+        <input type="tel" name="phone" required>
+      </label>
+      <fieldset class="checkbox-group">
+        <div class="checkbox-row">
+          <input type="checkbox" name="situation" value="변기 막힘" class="checkbox-input" />
+          <span class="checkbox-label">변기 막힘</span>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" name="situation" value="싱크대 막힘" class="checkbox-input" />
+          <span class="checkbox-label">싱크대 막힘</span>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" name="situation" value="배관해빙 및 대공사" class="checkbox-input" />
+          <span class="checkbox-label">배관해빙 및 대공사</span>
+        </div>
+        <div class="checkbox-row">
+          <input type="checkbox" name="situation" value="기타" class="checkbox-input" />
+          <span class="checkbox-label">기타:</span>
+          <input type="text" name="기타내용" class="inline-text" placeholder="직접입력" />
+        </div>
+      </fieldset>
+      <label>문의사항
+        <textarea name="message" rows="4"></textarea>
+      </label>
+
+      <button type="submit" class="form-button">무료상담 신청하기</button>
+    </form>
+  </section>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = "https://open.kakao.com/o/sIOY3sgh";
+        } else {
+          alert("전송에 실패했습니다. 다시 시도해주세요.");
+        }
+      }).catch(() => {
+        alert("문제가 발생했습니다. 다시 시도해주세요.");
+      });
+    }
+  </script>
+
+</body>
+</html>
